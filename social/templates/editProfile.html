@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Edit Profile!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" value="{{profile.user.username}}">
+        <br>
+        <input type="email" name="email" placeholder="Email" value="{{profile.user.email}}">
+        <br>
+        <input type="text" name="bio" placeholder="Tell Me About Yourself" value="{{profile.bio}}">
+        <br>
+        <input type="text" name="city" placeholder="City" value="{{profile.city}}">
+        <br>
+        <input type="text" name="country" placeholder="Country" value="{{profile.country}}">
+        <br>
+        <label>Leave empty if you want to keep original photo: </label>
+        <input type="file" name="ppic">
+        <br>
+        <input type="submit" value="Edit">
+    </form>
+{% endblock %}

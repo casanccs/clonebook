@@ -1,0 +1,13 @@
+.Post{
+    border: 5px solid black;
+    background-color: aquamarine;
+    margin: 20px;
+}
+
+.Post img{
+    height: 50px;
+}
+
+.Post *{
+    margin: 20px;
+}

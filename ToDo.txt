@@ -1,0 +1,10 @@
+1. Sort Posts (done)
+2. Search for people (done) 
+3. Click on people to see their Posts  (done)
+4. Add edit profile to change bio and profile pic (done)
+5. Follow
+6. Likes
+7. Home page only shows posts of people you follow 
+8. Admin link if admin
+9. Chat System
+10. Commenting

@@ -1,0 +1,13 @@
+.op{
+    border: 5px solid black;
+    background-color: aquamarine;
+    margin: 20px;
+}
+
+.op img{
+    height: 50px;
+}
+
+.op *{
+    margin: 20px;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Login Now!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="title">
+        <br>
+        <input type="text" name="desc" placeholder="Description">
+        <br>
+        <input type="file" name="pic">
+        <br>
+        <input type="submit" value="Create Post">
+    </form>
+    <a href="{% url 'Home' %}">Home</a>
+{% endblock %}

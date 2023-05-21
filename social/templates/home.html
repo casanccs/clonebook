@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}<link rel="stylesheet" href="{% static 'home.css' %}">{% endblock %}
+
+{% block content %}
+    <a href="{% url 'Logout' %}">Logout Here</a>
+    <h1>Hello {{profile.user.username}}</h1>
+    <a href="{% url 'EditProfile' profile.id %}">Edit Profile</a>
+    <br>
+    <a class="createPostButton" href="{% url 'CreatePost' %}">Create Post+</a>
+    <br>
+    <a href="{% url 'SearchProfiles' %}">Search For People</a>
+    <br>
+    <img src="{{profile.ppic.url}}">
+    <p>{{profile.bio}}</p>
+
+    <div class="Posts">
+        {% for post in posts %}
+            <div class="Post">
+                {% if post.profile.user.username == profile.user.username %}
+                    <a href="{% url 'DeletePost' post.id %}">Delete Post</a>
+                {% endif %}
+                <h2>{{post.title}}</h2>
+                <h3>{{post.profile.user.username}}</h3>
+                <h3>{{post.created}}</h3>
+                <br>
+                {% if post.pic %}
+                    <img src="{{post.pic.url}}">
+                {% endif %}
+                <br>
+                <p>{{post.desc}}</p>
+                <h6>Likes: {{post.likes}}</h6>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
